@@ -1,0 +1,15 @@
+allow cameraserver vendor_file:file { getattr map open read execute };
+allow hal_camera_default default_prop:file read;
+allow hal_camera_default mnt_vendor_file:file execute;
+allow hal_camera_default platform_app:binder { call transfer };
+allow hal_camera_default proc_stat:file { open read };
+allow mediacodec vendor_audio_prop:file { getattr map open read };
+allow mediaserver vendor_file:file { getattr map open read execute };
+allow platform_app app_data_file:file execute;
+allow platform_app audio_config_prop:file { getattr map open read };
+allow platform_app cgroup:file { open read };
+allow platform_app hal_camera_default:binder { call transfer };
+allow platform_app vendor_default_prop:file { getattr map open };
+allow platform_app vendor_fp_prop:file { getattr map open read };
+allow platform_app vendor_file:file { read open getattr map execute };
+allow platform_app hal_xiaomi_camera_hwservice:hwservice_manager { find };

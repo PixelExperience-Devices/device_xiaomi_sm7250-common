@@ -276,3 +276,12 @@ service nv_mac /vendor/bin/nv_mac
     user system
     group system inet net_admin wifi net_raw
     oneshot
+
+on property:sys.boot_completed=1
+    start monet-miuicamera-sh
+
+service monet-miuicamera-sh /vendor/bin/init.monet-miuicamera.sh
+    class main
+    user system
+    group system 
+    oneshot

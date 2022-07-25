@@ -406,7 +406,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RAMDISK)/fstab.default \
     $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_RAMDISK)/fstab.emmc \
-    $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc
+    $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/rootdir/bin/init.monet-miuicamera.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.monet-miuicamera.sh
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -489,3 +490,6 @@ PRODUCT_PACKAGES += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/sm7250-common/sm7250-common-vendor.mk)
+
+# MIUI Camera
+$(call inherit-product-if-exists, vendor/xiaomi/monet-miuicamera/Android.mk)

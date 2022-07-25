@@ -147,7 +147,7 @@ vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 camera.disable_zsl_mode=true
@@ -383,3 +383,8 @@ wifi.aware.interface=wifi-aware0
 # Zygote
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 persist.device_config.runtime_native.usap_pool_enabled=true
+
+# MIUI Camera
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+ro.miui.notch=1 \
+ro.com.google.lens.oem_camera_package=com.android.camera
