@@ -16,6 +16,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 PRODUCT_ADB_KEYS := $(LOCAL_PATH)/adb-keys/adb_vendor_key.pub
 
 ifeq ($(wildcard $(PRODUCT_ADB_KEYS)),)
